@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify, send_from_directory
 import os
+from flask_cors import CORS
 
 app = Flask(__name__, static_folder='.')
+CORS(app, origins=["https://frontend-three-cyan-66.vercel.app"])
 
 @app.route('/')
 def serve_index():
